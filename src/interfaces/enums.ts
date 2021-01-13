@@ -7,4 +7,6 @@ export enum EnumSubjects {
   Math,
   Biology,
   English,
+  Chemistry,
+  Art,
 }
