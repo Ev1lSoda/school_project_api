@@ -112,7 +112,8 @@ export default class SqlQueries {
          teacher.canTeachSubjects
          FROM teacher, lesson
          WHERE lesson.subject="Math" AND lesson.classroomNum=100 AND lesson.teacherId=teacher.teacherId
-         AND teacher.yearsOfExperience>10 AND lesson.lessonStart>='08:30:00' AND lesson.lessonEnd<='14:30:00'`,
+         AND teacher.yearsOfExperience>10 AND lesson.lessonStart>='08:30:00' AND lesson.lessonEnd<='14:30:00'
+         `,
         (err, result) => {
           if (err) {
             return reject(`Error at teacher: ${err}`);

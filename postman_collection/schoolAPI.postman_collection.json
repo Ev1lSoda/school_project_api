@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "e1f9686b-8135-4f87-8f74-6d51c14a1354",
+		"name": "schoolAPI",
+		"description": "How to use school API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:5555/api/teacher",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS3lsZSIsImlhdCI6MTYwNjkwMDgyM30.ndxYHfVJ0OlPBBLyRMrMkF3KK0W_pL38tdzz2Ob3xF4",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"teacher\":{\r\n    \"age\": 59,\r\n    \"sex\": \"male\",\r\n    \"yearsOfExperience\": 21,\r\n    \"workedInUniversity\": 10,\r\n    \"canTeachSubjects\": \"arT\",\r\n    \"teacherName\": \"Toby4\"\r\n}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5555/api/teacher",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"teacher"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5555/api/teacher",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"teacher\":{\r\n    \"age\": 60,\r\n    \"sex\": \"male\",\r\n    \"yearsOfExperience\": 21,\r\n    \"workedInUniversity\": 10,\r\n    \"canTeachSubjects\": \"Math,English\",\r\n    \"teacherName\": \"John Dow\",\r\n    \"teacherId\": 2\r\n}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5555/api/teacher",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"teacher"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5555/api/teacher",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"teacher\":{\r\n    \"teacherId\": 7\r\n}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5555/api/teacher",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"teacher"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5555/api/teacher/read",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"teacher\":{\r\n    \"age\": 88\r\n}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5555/api/teacher/read",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"teacher",
+						"read"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:5555/api/teacher/getTargetMathTeachers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5555/api/teacher/getTargetMathTeachers",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"api",
+						"teacher",
+						"getTargetMathTeachers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

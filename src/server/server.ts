@@ -11,7 +11,7 @@ export default class Server {
   constructor(controllers: any) {
     dotenv.config();
     this.app = express();
-    this.port = parseInt(process.env.PORT as string, 10);
+    this.port = parseInt(process.env.PORT as string, 10) | 5555;
     this.app.use(helmet());
     this.app.use(cors());
     this.app.use(express.json());
