@@ -102,13 +102,24 @@ export default class SqlQueries {
       );
     });
   }
-
-  // connection.connect();
-
-  // connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
-  // if (error) throw error;
-  // console.log('The solution is: ', results[0].solution);
-  // });
-
-  // connection.end();
+  getTargetMathTeachers(): Promise<number> {
+    return new Promise((resolve, reject) => {
+      const db = this.mysqlConnect();
+      db.query(
+        `
+        SELECT teacher.teacherId, teacher.teacherName, teacher.age, teacher.sex,
+         teacher.yearsOfExperience, teacher.workedInUniversity,
+         teacher.canTeachSubjects
+         FROM teacher, lesson
+         WHERE lesson.subject="Math" AND lesson.classroomNum=100 AND lesson.teacherId=teacher.teacherId
+         AND teacher.yearsOfExperience>10 AND lesson.lessonStart>='08:30:00' AND lesson.lessonEnd<='14:30:00'`,
+        (err, result) => {
+          if (err) {
+            return reject(`Error at teacher: ${err}`);
+          }
+          resolve(result);
+        }
+      );
+    });
+  }
 }

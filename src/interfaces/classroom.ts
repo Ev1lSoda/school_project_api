@@ -1,4 +1,4 @@
 export interface Classroom {
-  classroomName: string;
-  classroomNum: number;
+  classroomId?: number;
+  classroomNum?: number;
 }
